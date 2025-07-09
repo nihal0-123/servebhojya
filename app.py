@@ -1,9 +1,15 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
+
 from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
 CORS(app)
+from flask import render_template
+
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 # Replace with your actual bot token and chat ID
 TELEGRAM_BOT_TOKEN = '7889097363:AAF1Nu5bxJDqeEDoJzHzdQ3A0rsUvKwg2Hk'
